@@ -1,6 +1,6 @@
 import { getFirestore, getDocs, collection } from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore.min.js';
 
-async function read() {
+async function r() {
     const firebaseApp = firebase.initializeApp({
         apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
         authDomain: "basr-d0079.firebaseapp.com",
