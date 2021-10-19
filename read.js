@@ -24,4 +24,3 @@ async function getTodos() {
     }
 };
 export function getTodos();
-getTodos();
