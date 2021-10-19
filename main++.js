@@ -1,5 +1,3 @@
-import { getTodos } from "./read";
-
 function g() {
     var user = window.localStorage.getItem('emailForSignIn');
     var kuda = document.getElementById("flex").value;
@@ -14,4 +12,3 @@ function g() {
     db.collection('Выходы').doc(user).update({ vrema_prixoda });
     getTodos();
 };
-window.addEventListener("onclick", g);
