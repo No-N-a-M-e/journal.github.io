@@ -1,5 +1,5 @@
 import { getFirestore, getDocs, collection } from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore.min.js';
-import initializeApp from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-app.min.js';
+import { default as initializeApp } from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-app.min.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
