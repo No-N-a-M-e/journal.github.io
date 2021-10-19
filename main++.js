@@ -14,4 +14,4 @@ function g() {
     db.collection('Выходы').doc(user).update({ vrema_prixoda });
     getTodos();
 };
-window.addEventListener("onclick", g());
+window.addEventListener("onclick", g);
