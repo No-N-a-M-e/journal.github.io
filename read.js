@@ -11,7 +11,7 @@ const firebaseApp = firebase.initializeApp({
     measurementId: "G-3M0ZDER1R6"
 });
 const db = firebaseApp.firestore();
-const querySnapshot = await getDocs(collection(db, "Выходы"));
+const querySnapshot = await getDocs(db.collection("Выходы"));
 querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data()}`);
 });
