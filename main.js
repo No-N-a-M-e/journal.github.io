@@ -1,5 +1,5 @@
 //import { collection } from "./firebase/firestore";
-import { getDocs } from "/firestore/lite";
+import { getFirestore, collection, getDocs } from '/node_modules/firebase/firestore/lite';
 
 function add() {
     var user = window.localStorage.getItem('emailForSignIn');
