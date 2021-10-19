@@ -1,5 +1,4 @@
-//import { collection } from "./firebase/firestore";
-import { getFirestore, collection, getDocs } from 'journal/node_modules/firebase/firestore/lite';
+import { getDocs } from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.3/firebase-firestore-lite.min.js';
 
 function add() {
     var user = window.localStorage.getItem('emailForSignIn');
