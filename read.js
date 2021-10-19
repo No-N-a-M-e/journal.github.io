@@ -17,7 +17,7 @@ async function getTodos() {
     try {
         const todoRef = collection(db, 'Выходы');
         var allTodos = await getDocs(todoRef);
-        console.log(allTodos)
+        //console.log(allTodos)
     } catch (err) {
         console.log(err)
     }
