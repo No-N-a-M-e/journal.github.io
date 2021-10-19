@@ -23,4 +23,5 @@ async function getTodos() {
         console.log(err)
     }
 };
+export function getTodos();
 getTodos();
