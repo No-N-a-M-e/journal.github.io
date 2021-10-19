@@ -17,3 +17,4 @@ async function r() {
         console.log(`${doc.id} => ${doc.data()}`);
     });
 };
+window.addEventListener("onclick", r);
