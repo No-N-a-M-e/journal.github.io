@@ -51,7 +51,7 @@ function login() {
         .then((userCredential) => {
             var user = userCredential.user;
             window.localStorage.setItem('emailForSignIn', emailin);
-            document.location.href = 'https://n0-n4-m3.github.io/journal/main.html'
+            document.location.href = 'https://n0-n4-m3.github.io/journa/main.html'
             window.localStorage.setItem('emailForSignIn', emailin);
             $('.grid').css('grid-temlate-areas', 'out out')
                 // if (user.email.Verified) {
