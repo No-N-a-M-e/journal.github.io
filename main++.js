@@ -7,17 +7,17 @@ function g() {
     var vrema_uxoda = document.getElementById("time").value;
     var data_prixoda = document.getElementById("end").value;
     var vrema_prixoda = document.getElementById("time_end").value;
-    const firebaseApp = firebase.initializeApp({
-        apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
-        authDomain: "basr-d0079.firebaseapp.com",
-        databaseURL: "https://basr-d0079-default-rtdb.firebaseio.com",
-        projectId: "basr-d0079",
-        storageBucket: "basr-d0079.appspot.com",
-        messagingSenderId: "250883445973",
-        appId: "1:250883445973:web:c200dd55f9dfd739e0fe5c",
-        measurementId: "G-3M0ZDER1R6"
-    });
-    const db = firebaseApp.firestore();
+    // const firebaseApp = firebase.initializeApp({
+    //     apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
+    //     authDomain: "basr-d0079.firebaseapp.com",
+    //     databaseURL: "https://basr-d0079-default-rtdb.firebaseio.com",
+    //     projectId: "basr-d0079",
+    //     storageBucket: "basr-d0079.appspot.com",
+    //     messagingSenderId: "250883445973",
+    //     appId: "1:250883445973:web:c200dd55f9dfd739e0fe5c",
+    //     measurementId: "G-3M0ZDER1R6"
+    // });
+    // const db = firebaseApp.firestore();
     db.collection('Выходы').doc(user).update({ kuda });
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ vrema_uxoda });
@@ -32,9 +32,9 @@ function g() {
     // console.log(getCities);
     // document.getElementsByClassName("dating mid-text").value = data_uxoda;
     // document.getElementsByClassName("timing mid-text").value =vrema_uxoda;
-    const querySnapshot = await getDocs(collection(db, "users"));
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-    });
+    // const querySnapshot = await getDocs(collection(db, "users"));
+    // querySnapshot.forEach((doc) => {
+    //     console.log(`${doc.id} => ${doc.data()}`);
+    // });
 };
-window.addEventListener("onclick", g);
+// window.addEventListener("onclick", g);
