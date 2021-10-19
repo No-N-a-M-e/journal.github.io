@@ -16,10 +16,10 @@ const db = getFirestore(app);
 async function getTodos() {
     try {
         const todoRef = collection(db, 'Выходы');
-        var allTodos = await getDocs(todoRef);
-        //console.log(allTodos)
+        let allTodos = await getDocs(todoRef);
+        console.log(allTodos)
     } catch (err) {
         console.log(err)
     }
 };
-export function getTodos();
+export default getTodos();
