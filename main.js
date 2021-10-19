@@ -1,7 +1,5 @@
 import { getFirestore, getDocs, collection } from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore.min.js';
 
-document.addEventListener("onclick", add());
-
 function add() {
     var user = window.localStorage.getItem('emailForSignIn');
     var kuda = document.getElementById("flex").value;
@@ -36,6 +34,7 @@ function add() {
     document.getElementsByClassName("timing mid-text").value = vrema_uxoda;
 
 };
+document.addEventListener("onclick", add());
 async function read() {
     const firebaseApp = firebase.initializeApp({
         apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
