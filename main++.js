@@ -10,5 +10,4 @@ function g() {
     db.collection('Выходы').doc(user).update({ vrema_uxoda });
     db.collection('Выходы').doc(user).update({ data_prixoda });
     db.collection('Выходы').doc(user).update({ vrema_prixoda });
-    getTodos();
 };
