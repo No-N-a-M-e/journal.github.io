@@ -32,5 +32,9 @@ function g() {
     // console.log(getCities);
     // document.getElementsByClassName("dating mid-text").value = data_uxoda;
     // document.getElementsByClassName("timing mid-text").value =vrema_uxoda;
+    const querySnapshot = await getDocs(collection(db, "users"));
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });
 };
 window.addEventListener("onclick", g);
