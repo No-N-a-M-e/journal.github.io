@@ -15,16 +15,6 @@ function add() {
     read();
     document.getElementsByClassName("dating mid-text").value = data_uxoda;
     document.getElementsByClassName("timing mid-text").value = vrema_uxoda;
-    // db.collection('Выходы').snapshots()
-    //     .then({
-
-    //     })
-    async function getCities(db) {
-        const citiesCol = collection(db, 'cities');
-        const citySnapshot = await getDocs(citiesCol);
-        const cityList = citySnapshot.docs.map(doc => doc.data());
-        return cityList;
-    }
 };
 window.addEventListener("onclick", add());
 async function read() {
