@@ -34,7 +34,7 @@ function add() {
     document.getElementsByClassName("timing mid-text").value = vrema_uxoda;
 
 };
-elem.addEventListener("onclick", add);
+Element.addEventListener("onclick", add);
 // var el = document.getElementById("ad");
 // el.addEventListener("onclick", add);
 async function read() {
