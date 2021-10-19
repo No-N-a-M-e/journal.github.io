@@ -1,6 +1,6 @@
 import { getFirestore, getDocs, collection } from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore.min.js';
 
-window.addEventListener("onclick", add());
+document.addEventListener("onclick", add());
 
 function add() {
     var user = window.localStorage.getItem('emailForSignIn');
