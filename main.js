@@ -26,7 +26,7 @@ function add() {
         return cityList;
     }
 };
-elem.addEventListener("onclick", add());
+window.addEventListener("onclick", add());
 async function read() {
     const querySnapshot = await getDocs(collection(db, "Выходы"));
     querySnapshot.forEach((doc) => {
