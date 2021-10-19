@@ -22,4 +22,4 @@ async function getTodos() {
         console.log(err)
     }
 };
-//export function getTodos();
+export function getTodos();
