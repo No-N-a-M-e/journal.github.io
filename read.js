@@ -17,3 +17,5 @@ async function read() {
         console.log(`${doc.id} => ${doc.data()}`);
     });
 };
+
+export * from "./read.js"

@@ -1,3 +1,5 @@
+import * as read from "./read.js";
+
 function add() {
     var user = window.localStorage.getItem('emailForSignIn');
     var kuda = document.getElementById("flex").value;
