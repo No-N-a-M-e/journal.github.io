@@ -1,0 +1,214 @@
+$orange: #E95420
+$brown: #BF3E11
+$card-bgc: #EAEAEA
+$stroke: #D0D0D0
+$white: #fff
+$dark-text: #8A8A8A
+
+html, body
+    font-family: 'Montserrat', sans-serif
+    margin: 0
+    padding: 0
+
+a
+    text-decoration: none
+    color: black
+
+.wrapper
+    width: 975px
+    margin: 0 auto
+
+.header
+    width: 100%
+    padding: 15px 0px
+
+#header
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.title
+    font-weight: bold
+    font-size: 1.5em
+
+.mid-text
+    font-size: 1em
+
+.mini-text
+    font-size: 0.875em
+
+.card-bgc
+    background-color: $card-bgc
+
+.orange
+    color: $orange
+
+.white
+    color: #fff
+
+.bold
+    font-weight: bold
+
+.semi-bold
+    font-weight: 600
+
+.sec-bgc
+    background-color: $card-bgc
+
+.orange-bgc
+    background-color: $orange
+
+.ru
+    background-color: $brown
+    border-radius: 5px
+    padding: 5px 10px
+    margin-right: 15px
+
+.grid
+    margin-top: 35px
+    margin-bottom: 35px
+    display: grid
+    grid-template-columns: 50% 50%
+    grid-template-areas: "in in"
+    
+.in
+    padding: 50px 38px
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    align-items: center
+
+    border: 1px solid $stroke 
+    border-radius: 5px
+    grid-area: in
+    visibility: visible
+
+.out
+    
+    margin-top: 20px
+    padding: 50px 38px
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+
+    border: 1px solid $stroke
+    border-radius: 5px
+    grid-area: out
+
+.last-out
+    padding: 0px 38px
+
+    border: 1px solid $stroke
+    border-radius: 5px
+    grid-area: last-out
+
+.forma
+    display: flex
+    flex-direction: column
+
+.flex
+    display: flex
+
+.auto
+    background-color: $orange
+    color: white
+    padding: 3.5px
+    border-radius: 5px
+    margin-left: 12px
+
+.parametrs
+    width: 387px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.login_pole
+    font-size: 21px
+
+
+    width: 340px
+    padding: 15px 20px
+    margin-bottom: 10px
+    border-radius: 5px
+    border: 2px solid $stroke
+    &::placeholder
+        font-size: 14px
+        color: $dark-text
+        font-weight: 600
+
+.medium
+    font-weight: 500
+
+.login_submit
+    cursor: pointer
+    margin: 0px 10px
+    border: 0
+    border-radius: 5px
+    padding: 10px 15px
+
+.pole
+    cursor: pointer
+    font-size: 1em
+    max-width: 275px
+    min-width: 150px
+    font-weight: 500
+    padding: 5px 35px
+    border-radius: 5px
+    border: 2px solid $stroke
+
+.ready
+    padding: 10px 15px
+    border-radius: 5px
+
+.brown
+    color: $brown
+
+.buttons
+    justify-content: space-between
+
+#check
+    padding: 5px 10px
+    border-radius: 5px
+
+.last-out
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    align-items: center
+    margin-bottom: 20px
+
+#footer
+    height: 50px
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    align-content: center
+
+.nadpis
+    cursor: pointer
+
+.in2
+    padding: 50px 38px
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    align-items: center
+
+    border: 1px solid $stroke 
+    border-radius: 5px
+    grid-area: in
+    visibility: hidden
+
+@media (max-width: 1100px) 
+    .grid
+        grid-template-areas: "in" "out" "last-out"
+        grid-template-columns: 100% 100%
+        grid-gap: 10px
+
+    .wrapper
+        width: 100%
+        margin: 0 auto
+
+    .naming
+        display: none
