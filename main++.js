@@ -23,13 +23,13 @@ function g() {
     db.collection('Выходы').doc(user).update({ vrema_uxoda });
     db.collection('Выходы').doc(user).update({ data_prixoda });
     db.collection('Выходы').doc(user).update({ vrema_prixoda });
-    async function getCities(db) {
-        const citiesCol = collection(db, 'Выходы');
-        const citySnapshot = await getDocs(user);
-        const cityList = citySnapshot.docs.map(doc => doc.data());
-        return cityList;
-    }
-    console.log(getCities);
+    // async function getCities(db) {
+    //     const citiesCol = collection(db, 'Выходы');
+    //     const citySnapshot = await getDocs(user);
+    //     const cityList = citySnapshot.docs.map(doc => doc.data());
+    //     return cityList;
+    // }
+    // console.log(getCities);
     // document.getElementsByClassName("dating mid-text").value = data_uxoda;
     // document.getElementsByClassName("timing mid-text").value =vrema_uxoda;
 };
