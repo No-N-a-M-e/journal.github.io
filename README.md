@@ -1,1 +1,1 @@
-# journal.github.io
+# journal.io
