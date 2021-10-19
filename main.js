@@ -36,7 +36,7 @@ function add() {
 };
 document.addEventListener("onclick", add());
 var el = document.getElementsByClassName("ready white orange-bgc title medium");
-el.addEventListener("click", add);
+el.addEventListener("onclick", add);
 async function read() {
     const firebaseApp = firebase.initializeApp({
         apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
