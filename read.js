@@ -11,16 +11,15 @@ const firebaseConfig = {
     appId: "1:250883445973:web:c200dd55f9dfd739e0fe5c",
     measurementId: "G-3M0ZDER1R6"
 };
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 async function getTodos() {
     try {
         const todoRef = collection(db, 'Выходы');
-        let allTodos = await getDocs(todoRef);
+        var allTodos = await getDocs(todoRef);
         console.log(allTodos)
     } catch (err) {
         console.log(err)
     }
 };
-export function getTodos();
+//export function getTodos();
