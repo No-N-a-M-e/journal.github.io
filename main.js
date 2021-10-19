@@ -35,8 +35,6 @@ function add() {
 
 };
 Element.addEventListener("onclick", add);
-// var el = document.getElementById("ad");
-// el.addEventListener("onclick", add);
 async function read() {
     const firebaseApp = firebase.initializeApp({
         apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
