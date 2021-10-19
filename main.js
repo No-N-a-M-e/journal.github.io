@@ -35,7 +35,7 @@ function add() {
 
 };
 //document.addEventListener("onclick", add);
-var el = document.getElementsByClassName("ready white orange-bgc title medium");
+var el = document.getElementById("ad");
 el.addEventListener("onclick", add);
 async function read() {
     const firebaseApp = firebase.initializeApp({
