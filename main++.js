@@ -11,3 +11,9 @@ function g() {
     db.collection('Выходы').doc(user).update({ data_prixoda });
     db.collection('Выходы').doc(user).update({ vrema_prixoda });
 };
+async function getCities(db) {
+    const citiesCol = collection(db, 'cities');
+    const citySnapshot = await getDocs(citiesCol);
+    const cityList = citySnapshot.docs.map(doc => doc.data());
+    return cityList;
+}
