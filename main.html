@@ -130,6 +130,7 @@
     const app = firebase.initializeApp(firebaseConfig);
     const db2 = app.firestore();
     const db = getFirestore(app);
+    var user = window.localStorage.getItem('emailForSignIn');
     async function getTodos() {
         try {
             const todoRef = doc(db2, 'Выходы', user);
