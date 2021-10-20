@@ -1,4 +1,4 @@
-import { getFirestore, getDocs, collection } from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore.min.js';
+import { getFirestore, getDocs, doc } from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore.min.js';
 import { initializeApp } from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-app.min.js';
 
 const firebaseConfig = {
@@ -15,9 +15,13 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 async function getTodos() {
     try {
-        const todoRef = collection(db, 'Выходы');
+        const todoRef = doc(db, 'Выходы', user);
         let allTodos = await getDocs(todoRef);
-        console.log(allTodos)
+        if (allTodos.exists()) {
+            console.log("Document data:", allTodos.data());
+        } else {
+            console.log("No such document!");
+        }
     } catch (err) {
         console.log(err)
     }
