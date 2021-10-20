@@ -5,7 +5,6 @@ function g() {
     var vrema_uxoda = document.getElementById("time").value;
     var data_prixoda = document.getElementById("end").value;
     var vrema_prixoda = document.getElementById("time_end").value;
-    console.log(vrema_prixoda);
     db.collection('Выходы').doc(user).update({ kuda });
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ vrema_uxoda });
