@@ -5,7 +5,6 @@
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js" type="text/javascript"></script>
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js" type="text/javascript"></script>
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore-lite.min.js" integrity="sha512-g6bUBrYLgy2ZKPf3kEX9ch0DWUP3yT2U4sEJr75rZ3OpkjQQuR/mpOYnIAng+Kf4nmA1TKzo7UIhwyg00akT3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     const firebaseApp = firebase.initializeApp({
         apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
@@ -21,6 +20,11 @@
     const auth = firebaseApp.auth();
 </script>
 <script>
+    import {
+        doc,
+        getDocs
+    } from "https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore-lite.min.js";
+
     function g() {
         var user = window.localStorage.getItem('emailForSignIn');
         var kuda = document.getElementById("flex").value;
