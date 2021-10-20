@@ -133,7 +133,7 @@
     var user = window.localStorage.getItem('emailForSignIn');
     async function getTodos() {
         try {
-            const todoRef = doc(db2, 'Выходы', user);
+            const todoRef = doc(db, 'Выходы', user);
             let allTodos =
                 await getDocs(todoRef);
             if (allTodos.exists()) {
