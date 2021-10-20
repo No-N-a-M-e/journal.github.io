@@ -19,12 +19,6 @@
     const db = firebaseApp.firestore();
     const auth = firebaseApp.auth();
 </script>
-<script type="module" type="text/javascript">
-    import {
-        doc,
-        getDocs
-    } from "https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore-lite.min.js";
-</script>
 <script>
     function g() {
         var user = window.localStorage.getItem('emailForSignIn');
@@ -50,7 +44,7 @@
         });
     };
 </script>
-<script src="main++.js"></script>
+<script type="module" src="main++.js"></script>
 
 <head>
     <meta charset="UTF-8">
