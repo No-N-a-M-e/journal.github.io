@@ -10,11 +10,9 @@ const firebaseApp = firebase.initializeApp({
 });
 const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
-db.settings({
-    timestampInSnapshots: true
-});
+db.settings({ timestampInSnapshots: true });
 var user = window.localStorage.getItem('emailForSignIn');
-db.collection('Выходы').get(user).then((snapshot) => {
+db.collection('Выходы').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         console.log(doc.data());
     })
