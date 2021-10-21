@@ -12,8 +12,11 @@ const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
 db.settings({ timestampInSnapshots: true });
 var user = window.localStorage.getItem('emailForSignIn');
-db.collection('Выходы').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data(user));
-    })
+// function read(doc) {
+
+// }
+var exitcol = db.collection("Выходы").doc(user);
+
+exitcol.get().then((doc) => {
+    console.log(doc.data());
 })
