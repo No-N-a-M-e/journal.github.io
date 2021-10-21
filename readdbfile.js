@@ -20,5 +20,5 @@ function read(doc) {
 }
 exitcol.get().then((doc) => {
     read(doc);
-    console.log(doc.data());
+    console.log(doc.data().vrema_uxoda);
 })
