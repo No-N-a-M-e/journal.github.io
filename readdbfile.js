@@ -14,6 +14,6 @@ db.settings({ timestampInSnapshots: true });
 var user = window.localStorage.getItem('emailForSignIn');
 db.collection('Выходы').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
-        console.log(`${user} => ${doc.data()}`);
+        console.log(doc.data(user));
     })
 })
