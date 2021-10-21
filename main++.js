@@ -1,8 +1,5 @@
-import { doc, getDocs } from "https://cdnjs.cloudflare.com/ajax/libs/firebase/9.1.2/firebase-firestore-lite.min.js";
-
-export async function getCities(db, user) {
-    const citiesCol = doc(db, 'Выходы', user);
-    const citySnapshot = await getDocs(citiesCol);
-    const cityList = citySnapshot.docs.map(doc => doc.data());
-    return cityList;
-}
+db.on('value', function(snapshot) {
+    var uniqName = snapshot.name();
+    var comment = snapshot.val()["Выходы"];
+    console.log(comment);
+});
