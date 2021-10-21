@@ -2,9 +2,9 @@
 <html lang="ru">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-<script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js" type="text/javascript" type="module"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js" type="text/javascript" type="module"></script>
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js" type="text/javascript" type="module"></script>
-<script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js" type="text/javascript" type="module"></script>
+<script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js" type="text/javascript" type="module"></script> -->
 <script>
     const firebaseApp = firebase.initializeApp({
         apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
@@ -21,6 +21,11 @@
 </script>
 <script src="main++.js"></script>
 <script type="text/javascript">
+    import {
+        getDocs,
+        collection
+    } from "./node_modules/firebase/firestore";
+
     async function readdb() {
         const querySnapshot = await getDocs(collection(db, "users"));
         // querySnapshot.forEach((doc) => {
