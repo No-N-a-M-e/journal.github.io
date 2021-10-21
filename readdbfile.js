@@ -15,5 +15,7 @@ db.settings({
 });
 var user = window.localStorage.getItem('emailForSignIn');
 db.collection('Выходы').get(user).then((snapshot) => {
-    console.log(snapshot.docs);
+    snapshot.docs.forEach(doc => {
+        console.log(doc.data());
+    })
 })
