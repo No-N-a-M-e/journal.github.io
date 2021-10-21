@@ -13,7 +13,7 @@ const auth = firebaseApp.auth();
 db.settings({
     timestampInSnapshots: true
 });
-
-db.collection('cafes').get().then((snapshot) => {
+var user = window.localStorage.getItem('emailForSignIn');
+db.collection('Выходы').doc(user).get().then((snapshot) => {
     console.log(snapshot.docs);
 })
