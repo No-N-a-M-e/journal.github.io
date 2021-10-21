@@ -15,8 +15,8 @@ var user = window.localStorage.getItem('emailForSignIn');
 var exitcol = db.collection("Выходы").doc(user);
 
 function read(doc) {
-    document.getElementById("tmidtxt").value = doc.data().vrema_uxoda;
-    document.getElementById("dmidtxt").value = doc.data().data_uxoda;
+    document.getElementById("tmidtxt").value = String(doc.data().vrema_uxoda);
+    document.getElementById("dmidtxt").value = String(doc.data().data_uxoda);
 }
 exitcol.get().then((doc) => {
     read(doc);
