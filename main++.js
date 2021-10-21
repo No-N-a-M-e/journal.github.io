@@ -13,9 +13,9 @@ function adddb() {
 }
 
 function readdb() {
-    firebaseApp.firestore().on('value', function(snapshot) {
-        var uniqName = snapshot.name();
-        var comment = snapshot.val()["Выходы"];
-        console.log(comment);
-    });
+    const querySnapshot = await getDocs(collection(db, "users"));
+    // querySnapshot.forEach((doc) => {
+    // console.log(`${doc.id} => ${doc.data()}`);
+    // });
+    console.log(querySnapshot);
 }
