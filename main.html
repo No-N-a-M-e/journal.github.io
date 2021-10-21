@@ -106,6 +106,9 @@
         });
         const db = firebaseApp.firestore();
         const auth = firebaseApp.auth();
+        db.settings({
+            timestampInSnapshots: true
+        });
     </script>
     <script src="main++.js"></script>
     <script type="module" type="text/javascript">
