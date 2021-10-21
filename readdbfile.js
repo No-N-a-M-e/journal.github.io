@@ -12,11 +12,13 @@ const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
 db.settings({ timestampInSnapshots: true });
 var user = window.localStorage.getItem('emailForSignIn');
-// function read(doc) {
-
-// }
 var exitcol = db.collection("Выходы").doc(user);
 
+function read(doc) {
+    document.getElementById("tmidtxt").value = doc.data().vrema_uxoda;
+    document.getElementById("dmidtxt").value = doc.data().data_uxoda;
+}
 exitcol.get().then((doc) => {
+    read(doc);
     console.log(doc.data());
 })
