@@ -16,8 +16,8 @@ var exitcol = db.collection("Выходы").doc(user);
 
 exitcol.get().then((doc) => {
     console.log(document.getElementsByClassName("timing mid-text").textContent);
-    $("#tt").html(doc.data().vrema_uxoda.val());
-    $("#dt").html(doc.data().data_uxoda.val());
+    $("#tt").html(doc.data().vrema_uxoda);
+    $("#dt").html(doc.data().data_uxoda);
     console.log(document.getElementsByClassName("timing mid-text").textContent);
     document.getElementsByClassName("timing mid-text").textContent = doc.data().vrema_uxoda;
     document.getElementsByClassName("dating mid-text").textContent = doc.data().data_uxoda;
