@@ -14,13 +14,13 @@ db.settings({ timestampInSnapshots: true });
 var user = window.localStorage.getItem('emailForSignIn');
 var exitcol = db.collection("Выходы").doc(user);
 
-exitcol.get().then((doc) => {
+exitcol.onSnapshot((doc) => {
     $("#tt").html(doc.data().vrema_uxoda);
     $("#dt").html(doc.data().data_uxoda);
 })
 document.getElementById('check').addEventListener('click', function() {
-    $("#tt").html("-");
-    $("#dt").html("-");
+    // $("#tt").html("-");
+    // $("#dt").html("-");
     var veryfied = true;
     var now = new Date();
     console.log(now);
