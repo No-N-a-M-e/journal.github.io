@@ -6,10 +6,17 @@ function adddb() {
     var data_prixoda = document.getElementById("end").value;
     var vrema_prixoda = document.getElementById("time_end").value;
     var veryfied = false;
+    if (document.getElementById('start').value == getFullYear() + '-' + getMonth() + '-' + getDate()) {
+        db.collection('Выходы').doc(user).update({ data_uxoda });
+        window.alert('Введите правильную дату');
+    }
     db.collection('Выходы').doc(user).update({ kuda });
-    db.collection('Выходы').doc(user).update({ data_uxoda });
-    db.collection('Выходы').doc(user).update({ vrema_uxoda });
-    db.collection('Выходы').doc(user).update({ data_prixoda });
-    db.collection('Выходы').doc(user).update({ vrema_prixoda });
-    db.collection('Выходы').doc(user).update({ veryfied });
+    if (document.getElementById('time').value == getHours() + ':' + getMinutes()) {
+        db.collection('Выходы').doc(user).update({ vrema_uxoda });
+        window.alert('Введите правильное время');
+    }
+}
+db.collection('Выходы').doc(user).update({ data_prixoda });
+db.collection('Выходы').doc(user).update({ vrema_prixoda });
+db.collection('Выходы').doc(user).update({ veryfied });
 }
