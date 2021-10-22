@@ -9,11 +9,13 @@ function adddb() {
     var now = new Date();
     if (document.getElementById('start').value == now.getYear() + '-' + now.getMonth() + '-' + now.getDate()) {
         db.collection('Выходы').doc(user).update({ data_uxoda });
+    } else {
         window.alert('Введите правильную дату');
     }
     db.collection('Выходы').doc(user).update({ kuda });
     if (document.getElementById('time').value == now.getHours() + ':' + now.getMinutes()) {
         db.collection('Выходы').doc(user).update({ vrema_uxoda });
+    } else {
         window.alert('Введите правильное время');
     }
     db.collection('Выходы').doc(user).update({ data_prixoda });
