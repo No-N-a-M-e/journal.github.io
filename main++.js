@@ -6,12 +6,13 @@ function adddb() {
     var data_prixoda = document.getElementById("end").value;
     var vrema_prixoda = document.getElementById("time_end").value;
     var veryfied = false;
-    if (document.getElementById('start').value == getYear() + '-' + getMonth() + '-' + getDate()) {
+    var now = new Date();
+    if (document.getElementById('start').value == now.getYear() + '-' + now.getMonth() + '-' + now.getDate()) {
         db.collection('Выходы').doc(user).update({ data_uxoda });
         window.alert('Введите правильную дату');
     }
     db.collection('Выходы').doc(user).update({ kuda });
-    if (document.getElementById('time').value == getHours() + ':' + getMinutes()) {
+    if (document.getElementById('time').value == now.getHours() + ':' + now.getMinutes()) {
         db.collection('Выходы').doc(user).update({ vrema_uxoda });
         window.alert('Введите правильное время');
     }

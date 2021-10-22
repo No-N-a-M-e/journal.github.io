@@ -19,7 +19,5 @@ exitcol.onSnapshot((doc) => {
     $("#dt").html(doc.data().data_uxoda);
 })
 document.getElementById('check').addEventListener('click', function() {
-    var now = new Date();
-    console.log(now);
     db.collection('Выходы').doc(user).update({ veryfied: true });
 })
