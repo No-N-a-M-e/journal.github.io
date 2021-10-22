@@ -22,6 +22,8 @@ document.getElementById('check').addEventListener('click', function() {
     $("#tt").html("-");
     $("#dt").html("-");
     var veryfied = true;
+    var now = new Date();
+    console.log(now);
     db.collection('Выходы').doc(user).update({ veryfied });
     db.collection('Выходы').doc(user).update({ data_uxoda: "-" });
     db.collection('Выходы').doc(user).update({ vrema_uxoda: "-" });
