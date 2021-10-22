@@ -7,7 +7,7 @@ function adddb() {
     var vrema_prixoda = document.getElementById("time_end").value;
     var veryfied = false;
     var now = new Date();
-    console.log(document.getElementById('start').value + "== " + now.getYear() + ' - ' + String(now.getMonth() + 1).padStart(2, '0') + ' - ' + String(now.getDate()).padStart(2, '0'));
+    console.log(document.getElementById('start').value + "==" + String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0'));
     if (document.getElementById('start').value == now.getYear() + '-' + now.getMonth() + '-' + now.getDate()) {
         db.collection('Выходы').doc(user).update({ data_uxoda });
     } else {
