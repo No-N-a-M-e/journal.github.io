@@ -7,6 +7,7 @@ function adddb() {
     var vrema_prixoda = document.getElementById("time_end").value;
     var veryfied = false;
     var now = new Date();
+    console.log(document.getElementById('start').value + "==" + now.getYear() + '-' + now.getMonth() + '-' + now.getDate())
     if (document.getElementById('start').value == now.getYear() + '-' + now.getMonth() + '-' + now.getDate()) {
         db.collection('Выходы').doc(user).update({ data_uxoda });
     } else {
