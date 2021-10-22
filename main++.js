@@ -8,7 +8,7 @@ function adddb() {
     var veryfied = false;
     var now = new Date();
     console.log(document.getElementById('start').value + "==" + String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0'));
-    if (document.getElementById('start').value == now.getYear() + '-' + now.getMonth() + '-' + now.getDate()) {
+    if (document.getElementById('start').value == String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0')) {
         db.collection('Выходы').doc(user).update({ data_uxoda });
     } else {
         window.alert('Введите правильную дату');
