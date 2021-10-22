@@ -15,7 +15,7 @@ var user = window.localStorage.getItem('emailForSignIn');
 var exitcol = db.collection("Выходы").doc(user);
 
 exitcol.get().then((doc) => {
-    document.getElementById("tmidtxt").value = String(doc.data().vrema_uxoda);
-    document.getElementById("dmidtxt").value = String(doc.data().data_uxoda);
+    document.getElementsByClassName("timing mid-text").value = doc.data().vrema_uxoda;
+    document.getElementsByClassName("dating mid-text").value = doc.data().data_uxoda;
     console.log(doc.data().vrema_uxoda);
 })
