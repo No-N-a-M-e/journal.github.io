@@ -23,4 +23,9 @@ document.getElementById('check').addEventListener('click', function() {
     $("#dt").html("-");
     var veryfied = true;
     db.collection('Выходы').doc(user).update({ veryfied });
+    db.collection('Выходы').doc(user).update({ data_uxoda: "-" });
+    db.collection('Выходы').doc(user).update({ vrema_uxoda: "-" });
+    db.collection('Выходы').doc(user).update({ data_prixoda: "-" });
+    db.collection('Выходы').doc(user).update({ vrema_prixoda: "-" });
+    db.collection('Выходы').doc(user).update({ kuda: "-" });
 })
