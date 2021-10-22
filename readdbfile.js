@@ -18,3 +18,9 @@ exitcol.get().then((doc) => {
     $("#tt").html(doc.data().vrema_uxoda);
     $("#dt").html(doc.data().data_uxoda);
 })
+document.getElementById('check').addEventListener('click', function() {
+    $("#tt").html("-");
+    $("#dt").html("-");
+    var veryfied = true;
+    db.collection('Выходы').doc(user).update({ veryfied });
+})
