@@ -5,9 +5,11 @@ function adddb() {
     var vrema_uxoda = document.getElementById("time").value;
     var data_prixoda = document.getElementById("end").value;
     var vrema_prixoda = document.getElementById("time_end").value;
+    var veryfied = false;
     db.collection('Выходы').doc(user).update({ kuda });
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ vrema_uxoda });
     db.collection('Выходы').doc(user).update({ data_prixoda });
     db.collection('Выходы').doc(user).update({ vrema_prixoda });
+    db.collection('Выходы').doc(user).update({ veryfied });
 }
