@@ -6,7 +6,7 @@ function adddb() {
     var data_prixoda = document.getElementById("end").value;
     var vrema_prixoda = document.getElementById("time_end").value;
     var veryfied = false;
-    if (document.getElementById('start').value == getFullYear() + '-' + getMonth() + '-' + getDate()) {
+    if (document.getElementById('start').value == getYear() + '-' + getMonth() + '-' + getDate()) {
         db.collection('Выходы').doc(user).update({ data_uxoda });
         window.alert('Введите правильную дату');
     }
