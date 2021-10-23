@@ -10,7 +10,7 @@ const firebaseApp = firebase.initializeApp({
 });
 const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
-db.settings({ timestampInSnapshots: true });
+db.settings({ timestampInSnapshots: true, merge: true });
 var user = window.localStorage.getItem('emailForSignIn');
 var exitcol = db.collection("Выходы").doc(user);
 

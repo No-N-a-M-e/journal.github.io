@@ -6,12 +6,12 @@ function adddb() {
     var vrema_prixoda = document.getElementById("time_end").value;
     var veryfied = false;
     var now = new Date();
-    var data = String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-    db.collection('Выходы').doc(user).update({ data });
+    var data_uxoda = String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ kuda });
     if (document.getElementById('time').value < now.getHours() + ':' + now.getMinutes()) {
         db.collection('Выходы').doc(user).update({ vrema_uxoda });
-    } else {
+    } else if (data_uxoda == data_prixoda) {
         window.alert('Введите правильное время');
     }
     db.collection('Выходы').doc(user).update({ data_prixoda });
