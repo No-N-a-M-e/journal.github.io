@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<script>
+    db.getAuth().getUserByEmail(email)
+    .then((userRecord) => {
+        db.getAuth().updateUser(userRecord.uid, {emailVerified: true,}).then((userRecord) => {
+            document.location.href = './index.html'})
+    .catch((error) => {
+        console.log('Error updating user:', error);
+    });
+    })
+    .catch((error) => {
+        console.log('Error fetching user data:', error);
+    });
+</script>
+</html>
