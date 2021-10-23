@@ -62,9 +62,8 @@ function login() {
         })
         .catch((error) => {
             var errorCode = error.code;
-            if (errorCode == 'auth/user-not-found') {
-                window.alert('Введите существующую почту');
-            }
+            if (errorCode == 'auth/user-not-found') window.alert('Введите существующую почту');
+            if (errorCode == 'auth/wrong-password') window.alert('Неверный пароль');
             var errorMessage = error.message;
             console.log(errorCode);
             console.log(errorMessage);
