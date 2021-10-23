@@ -54,11 +54,10 @@ function login() {
         .then((userCredential) => {
             var user = userCredential.user;
             window.localStorage.setItem('emailForSignIn', emailin);
-            document.location.href = './main.html'
-            window.localStorage.setItem('emailForSignIn', emailin);
             $('.grid').css('grid-temlate-areas', 'out out')
             if (user.email.Verified) {
                 console.log('ok');
+                document.location.href = './main.html'
             } else {
                 window.alert('verifiy');
             }
