@@ -9,12 +9,20 @@ function adddb() {
     var data_uxoda = String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ kuda });
-    if (document.getElementById('time').value < now.getHours() + ':' + now.getMinutes()) {
+    if (vrema_uxoda < now.getHours() + ':' + now.getMinutes()) {
         db.collection('Выходы').doc(user).update({ vrema_uxoda });
-    } else if (data_uxoda == data_prixoda) {
+    } else {
         window.alert('Введите правильное время');
     }
-    db.collection('Выходы').doc(user).update({ data_prixoda });
-    db.collection('Выходы').doc(user).update({ vrema_prixoda });
+    if (data_prixoda < data_uxoda) {
+        db.collection('Выходы').doc(user).update({ data_prixoda });
+    } else {
+        window.alert('Введите правильную дату');
+    }
+    if ((vrema_prixoda < vrema_uxoda && data_uxoda == data_prixoda) || (vrema_prixoda > vrema_uxoda && data_prixoda > data_uxoda)) {
+        db.collection('Выходы').doc(user).update({ vrema_prixoda });
+    } else {
+        window.alert('введите правильное время');
+    }
     db.collection('Выходы').doc(user).update({ veryfied });
 }
