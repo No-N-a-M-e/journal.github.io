@@ -60,7 +60,7 @@ function login() {
             if (user.email.Verified) {
                 console.log('ok');
             } else {
-                window.alert('verifiy suka');
+                window.alert('verifiy');
             }
         })
         .catch((error) => {
