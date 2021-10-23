@@ -19,7 +19,7 @@ function adddb() {
     } else {
         window.alert('Введите правильную дату');
     }
-    if ((vrema_prixoda < vrema_uxoda && data_uxoda == data_prixoda) || (vrema_prixoda > vrema_uxoda && data_prixoda > data_uxoda)) {
+    if ((vrema_prixoda > vrema_uxoda && data_uxoda == data_prixoda) || (vrema_prixoda < vrema_uxoda && data_prixoda > data_uxoda)) {
         db.collection('Выходы').doc(user).update({ vrema_prixoda });
     } else {
         window.alert('введите правильное время');
