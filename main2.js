@@ -5,6 +5,7 @@ function create_accaunt() {
         url: 'https://n0-n4-m3.github.io/journal/verify.html',
         // This must be true.
         handleCodeInApp: true,
+        emailVerified: true
     };
     var emailin = document.getElementById("Emai").value;
     var password = document.getElementById("Passwor").value;
