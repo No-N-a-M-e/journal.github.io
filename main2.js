@@ -57,11 +57,11 @@ function login() {
             document.location.href = './main.html'
             window.localStorage.setItem('emailForSignIn', emailin);
             $('.grid').css('grid-temlate-areas', 'out out')
-                // if (user.email.Verified) {
-                //     console.log('ok');
-                // } else {
-                //     window.alert('verifiy suka');
-                // }
+            if (user.email.Verified) {
+                console.log('ok');
+            } else {
+                window.alert('verifiy suka');
+            }
         })
         .catch((error) => {
             var errorCode = error.code;
