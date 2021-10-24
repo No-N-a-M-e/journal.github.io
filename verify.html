@@ -16,9 +16,9 @@
     });
     const db = firebaseApp.firestore();
     const auth = firebaseApp.auth();
-    auth.getAuth().getUserByEmail(email)
+    getAuth().getUserByEmail(email)
     .then((userRecord) => {
-        auth.getAuth().updateUser(userRecord.uid, {emailVerified: true,}).then((userRecord) => {
+        getAuth().updateUser(userRecord.uid, {emailVerified: true,}).then((userRecord) => {
             document.location.href = './index.html'})
     .catch((error) => {
         console.log('Error updating user:', error);
