@@ -34,9 +34,9 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-    auth.sendVerificationLinkToEmail(e, a)
+    auth.currentUser.sendEmailVerification(e, a)
         .then(() => {
-            
+            console.log('Ок');
         })
         .catch((error) => {
             var errorCode = error.code;
