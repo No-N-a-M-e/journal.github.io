@@ -5,15 +5,15 @@
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js" type="text/javascript" type="module"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const mode = getParameterByName('mode');
-  const actionCode = getParameterByName('oobCode');
-  const continueUrl = getParameterByName('continueUrl');
-  const lang = getParameterByName('lang') || 'ru';
+  const mode = document.getParameterByName('mode');
+  const actionCode = document.getParameterByName('oobCode');
+  const continueUrl = document.getParameterByName('continueUrl');
+  const lang = document.getParameterByName('lang') || 'ru';
   const config = {
     'apiKey': "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8"
   };
-  const app = initializeApp(config);
-  const auth = getAuth(app);
+  const app = firebase.initializeApp(config);
+  const auth = firebase.getAuth(app);
 
   switch (mode) {
     case 'resetPassword':
