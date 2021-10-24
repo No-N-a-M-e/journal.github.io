@@ -2,7 +2,7 @@ function create_accaunt() {
     var actionCodeSettings = {
         // URL you want to redirect back to. The domain (www.example.com) for this
         // URL must be in the authorized domains list in the Firebase Console.
-        url: 'https://n0-n4-m3.github.io/journal/',
+        url: 'https://n0-n4-m3.github.io/journal/verify',
         // This must be true.
         handleCodeInApp: true,
         // emailVerified: true
@@ -34,16 +34,25 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-    auth.currentUser.sendEmailVerification()
-        .then(() => {
-            console.log('Ок');
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(errorCode);
-            console.log(errorMessage);
-        });
+auth
+  .generateEmailVerificationLink(e, a)
+  .then((link) => {
+    return sendCustomVerificationEmail(useremail, displayName, link);
+  })
+  .catch((error) => {
+    console.log(errorCode);
+    console.log(errorMessage);
+  });
+    // auth.currentUser.sendEmailVerification()
+    //     .then(() => {
+    //         console.log('Ок');
+    //     })
+    //     .catch((error) => {
+    //         var errorCode = error.code;
+    //         var errorMessage = error.message;
+    //         console.log(errorCode);
+    //         console.log(errorMessage);
+    //     });
 };
 
 function login() {
