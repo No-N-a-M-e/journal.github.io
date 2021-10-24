@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/getparameterbyname/dist/bundle.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js" type="text/javascript" type="module"></script>
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js" type="text/javascript" type="module"></script>
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js" type="text/javascript" type="module"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const mode = getParameterByName('mode');
-  const actionCode = getParameterByName('oobCode');
-  const continueUrl = getParameterByName('continueUrl');
-  const lang = getParameterByName('lang') || 'ru';
+  const mode = getQueryParameterByName('mode');
+  const actionCode = getQueryParameterByName('oobCode');
+  const continueUrl = getQueryParameterByName('continueUrl');
+  const lang = getQueryParameterByName('lang') || 'ru';
   const config = {
     'apiKey': "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8"
   };
