@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const config = {
     'apiKey': "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8"
   };
-  const app = firebase.initializeApp(config);
+  const app = initializeApp(config);
   const auth = getAuth(app);
 
   switch (mode) {
