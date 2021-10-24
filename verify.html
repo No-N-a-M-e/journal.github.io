@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'apiKey': "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8"
   };
   const app = firebase.initializeApp(config);
-  const auth = firebase.getAuth(app);
+  const auth = getAuth(app);
 
   switch (mode) {
     case 'resetPassword':
