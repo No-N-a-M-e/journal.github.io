@@ -34,9 +34,9 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-    firebase.auth().sendEmailVerification(e, a)
-        .then(() => {
-
+    firebase.auth().generateEmailVerificationLink(e, a)
+        .then((link) => {
+            return sendCustomVerificationEmail(e, displayName, link);
         })
         .catch((error) => {
             var errorCode = error.code;
