@@ -34,9 +34,9 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-    auth.generateEmailVerificationLink(e, a)
-        .then((link) => {
-            return sendCustomVerificationEmail(e, displayName, link);
+    auth.sendVerificationLinkToEmail(e, a)
+        .then(() => {
+            
         })
         .catch((error) => {
             var errorCode = error.code;
