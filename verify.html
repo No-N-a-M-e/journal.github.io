@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const actionCode = getParameterByName('oobCode');
   const continueUrl = getParameterByName('continueUrl');
   const lang = getParameterByName('lang') || 'ru';
+  console.log(mode,actionCode,continueUrl,lang);
   const app = firebase.initializeApp({
     apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
     authDomain: "basr-d0079.firebaseapp.com",
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       break;
     case 'verifyEmail':
       handleVerifyEmail(auth, actionCode, continueUrl, lang);
+      console.log('Verified');
       break;
     default:
   }
