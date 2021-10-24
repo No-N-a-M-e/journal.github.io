@@ -34,7 +34,7 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-    auth.currentUser.sendEmailVerification(e, a)
+    auth.currentUser.sendEmailVerification()
         .then(() => {
             console.log('Ок');
         })
