@@ -34,7 +34,7 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-    firebase.auth().sendSignInLinkToEmail(e, a)
+    firebase.auth().sendEmailVerification(e, a)
         .then(() => {
 
         })
