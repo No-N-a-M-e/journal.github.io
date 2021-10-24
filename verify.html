@@ -6,10 +6,10 @@
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js" type="text/javascript" type="module"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const mode = getQueryParameterByName('mode');
-  const actionCode = getQueryParameterByName('oobCode');
-  const continueUrl = getQueryParameterByName('continueUrl');
-  const lang = getQueryParameterByName('lang') || 'ru';
+  const mode = getParameterByName('mode');
+  const actionCode = getParameterByName('oobCode');
+  const continueUrl = getParameterByName('continueUrl');
+  const lang = getParameterByName('lang') || 'ru';
   const config = {
     'apiKey': "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8"
   };
