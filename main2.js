@@ -19,7 +19,7 @@ function create_accaunt() {
             db.collection('Выходы').doc(emailin).update({ data_uxoda });
             db.collection('Выходы').doc(emailin).update({ vrema_uxoda });
             db.collection('Ученики').doc(emailin).set({});
-            window.alert('Проверьте электронную почту');
+            window.alert('Проверьте электронную почту. Не закрывайте пожалуйста');
             var user = userCredential.user;
             verifiy(emailin, actionCodeSettings);
             user.reload();
@@ -55,6 +55,19 @@ function verifiy(e, a) {
             console.log(errorCode);
             console.log(errorMessage);
         });
+        firebase.auth().onAuthStateChanged(
+            function(user) {
+                if(user){
+                    var emailVerified = user.emailVerified;
+                    var email = user.email;
+                    if(emailVerified == true){
+                        window.alert('verify');
+                    }
+                } else {
+                    console.log("No user found")
+                }
+            }
+        ); 
 };
 
 function login() {
