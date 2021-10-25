@@ -23,6 +23,17 @@ firebase.auth().onAuthStateChanged(
             if(emailVerified == true){
                 document.getElementById("ad").disabled = true;
                 window.alert('verify');
+            } else {
+                auth.currentUser.sendEmailVerification()
+                    .then(() => {
+                        console.log('Ок');
+                    })
+                    .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log(errorCode);
+                        console.log(errorMessage);
+                }); 
             }
         } else {
             console.log("No user found")

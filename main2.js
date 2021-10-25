@@ -64,12 +64,12 @@ function login() {
             var user = userCredential.user;
             window.localStorage.setItem('emailForSignIn', emailin);
             $('.grid').css('grid-temlate-areas', 'out out')
-            if (user.email.Verified) {
-                console.log('ok');
+            // if (user.email.Verified) {
+            //     console.log('ok');
                 document.location.href = './main.html'
-            } else {
-                window.alert('not verifiy');
-            }
+            // } else {
+            //     window.alert('not verifiy');
+            // }
         })
         .catch((error) => {
             var errorCode = error.code;
