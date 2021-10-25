@@ -47,6 +47,7 @@ function verifiy(e, a) {
     auth.currentUser.sendEmailVerification(a)
         .then(() => {
             console.log('Ок');
+            user.reload();
         })
         .catch((error) => {
             var errorCode = error.code;
