@@ -6,6 +6,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js" type="text/javascript" type="module"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  history.go(-1)
   const mode = getParameterByName('mode');
   const actionCode = getParameterByName('oobCode');
   const continueUrl = getParameterByName('continueUrl');
