@@ -37,7 +37,7 @@ function verifiy(e, a) {
 auth.getAuth()
   .generateEmailVerificationLink(e, a)
   .then((link) => {
-    return sendCustomVerificationEmail(useremail, displayName, link);
+    return sendCustomVerificationEmail(e, displayName, link);
   })
   .catch((error) => {
     console.log(errorCode);
