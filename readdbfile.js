@@ -14,6 +14,22 @@ db.settings({ timestampInSnapshots: true, merge: true });
 var user = window.localStorage.getItem('emailForSignIn');
 var exitcol = db.collection("Выходы").doc(user);
 
+document.getElementById("ad").disabled = false;
+firebase.auth().onAuthStateChanged(
+    function(user) {
+        if(user){
+            var emailVerified = user.emailVerified;
+            var email = user.email;
+            if(emailVerified == true){
+                document.getElementById("ad").disabled = true;
+                window.alert('verify');
+            }
+        } else {
+            console.log("No user found")
+        }
+    }
+);
+
 exitcol.onSnapshot((doc) => {
     $("#tt").html(doc.data().vrema_uxoda);
     $("#dt").html(doc.data().data_uxoda);

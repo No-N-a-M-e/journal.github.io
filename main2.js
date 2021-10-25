@@ -43,7 +43,7 @@ function verifiy(e, a) {
     //     console.log(errorCode);
     //     console.log(errorMessage);
     //   });
-    auth.currentUser.sendEmailVerification(a)
+    auth.currentUser.sendEmailVerification()
         .then(() => {
             console.log('Ок');
         })
@@ -52,20 +52,7 @@ function verifiy(e, a) {
             var errorMessage = error.message;
             console.log(errorCode);
             console.log(errorMessage);
-        });
-        firebase.auth().onAuthStateChanged(
-            function(user) {
-                if(user){
-                    var emailVerified = user.emailVerified;
-                    var email = user.email;
-                    if(emailVerified == true){
-                        window.alert('verify');
-                    }
-                } else {
-                    console.log("No user found")
-                }
-            }
-        ); 
+        }); 
 };
 
 function login() {
