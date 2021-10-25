@@ -34,15 +34,6 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-    // auth.currentUser.getAuth()
-    //   .generateEmailVerificationLink(e, a)
-    //   .then((link) => {
-    //     return sendCustomVerificationEmail(e, displayName, link);
-    //   })
-    //   .catch((error) => {
-    //     console.log(errorCode);
-    //     console.log(errorMessage);
-    //   });
     auth.currentUser.sendEmailVerification()
         .then(() => {
             console.log('Ок');

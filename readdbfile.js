@@ -22,6 +22,7 @@ firebase.auth().onAuthStateChanged(
             var email = user.email;
             if(emailVerified == true){
                 document.getElementById("ad").disabled = true;
+                $('.nadpis').css('visibility', 'hidden');
                 window.alert('verify');
             } else {
                 auth.currentUser.sendEmailVerification()
