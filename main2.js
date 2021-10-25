@@ -22,7 +22,6 @@ function create_accaunt() {
             window.alert('Проверьте электронную почту. Не закрывайте пожалуйста');
             var user = userCredential.user;
             verifiy(emailin, actionCodeSettings);
-            user.reload();
             main(emailin);
         })
         .catch((error) => {
@@ -47,7 +46,6 @@ function verifiy(e, a) {
     auth.currentUser.sendEmailVerification(a)
         .then(() => {
             console.log('Ок');
-            user.reload();
         })
         .catch((error) => {
             var errorCode = error.code;
