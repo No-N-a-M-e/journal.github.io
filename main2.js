@@ -34,7 +34,7 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-auth
+auth.getAuth()
   .generateEmailVerificationLink(e, a)
   .then((link) => {
     return sendCustomVerificationEmail(useremail, displayName, link);
