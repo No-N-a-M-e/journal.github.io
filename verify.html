@@ -7,11 +7,11 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   console.log(document.referrer);
-  console.log($_SERVER['HTTP_REFERER']);
-  const mode = getParameterByName('mode');
-  const actionCode = getParameterByName('oobCode');
-  const continueUrl = getParameterByName('continueUrl');
-  const lang = getParameterByName('lang') || 'ru';
+  var link = document.referrer;
+  const mode = link.getParameterByName('mode');
+  const actionCode = link.getParameterByName('oobCode');
+  const continueUrl = link.getParameterByName('continueUrl');
+  const lang = link.getParameterByName('lang') || 'ru';
   console.log(mode,actionCode,continueUrl,lang);
   const app = firebase.initializeApp({
     apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
