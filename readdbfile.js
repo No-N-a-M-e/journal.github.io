@@ -24,7 +24,7 @@ firebase.auth().onAuthStateChanged(
                 $('.nadpis').css('visibility', 'hidden');
                 window.alert('verify');
             } else {
-                document.getElementById("ad").disabled = false;
+                document.getElementById("ad").setAttribute('class', 'disabled');
                 auth.currentUser.sendEmailVerification()
                     .then(() => {
                         console.log('Ок');
