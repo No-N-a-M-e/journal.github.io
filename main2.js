@@ -34,25 +34,25 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-auth.getAuth()
-  .generateEmailVerificationLink(e, a)
-  .then((link) => {
-    return sendCustomVerificationEmail(e, displayName, link);
-  })
-  .catch((error) => {
-    console.log(errorCode);
-    console.log(errorMessage);
-  });
-    // auth.currentUser.sendEmailVerification()
-    //     .then(() => {
-    //         console.log('Ок');
-    //     })
-    //     .catch((error) => {
-    //         var errorCode = error.code;
-    //         var errorMessage = error.message;
-    //         console.log(errorCode);
-    //         console.log(errorMessage);
-    //     });
+    // auth.getAuth()
+    //   .generateEmailVerificationLink(e, a)
+    //   .then((link) => {
+    //     return sendCustomVerificationEmail(e, displayName, link);
+    //   })
+    //   .catch((error) => {
+    //     console.log(errorCode);
+    //     console.log(errorMessage);
+    //   });
+    auth.currentUser.sendEmailVerification()
+        .then(() => {
+            console.log('Ок');
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+        });
 };
 
 function login() {
@@ -68,7 +68,7 @@ function login() {
                 console.log('ok');
                 document.location.href = './main.html'
             } else {
-                window.alert('verifiy');
+                window.alert('not verifiy');
             }
         })
         .catch((error) => {
