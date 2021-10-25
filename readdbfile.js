@@ -14,7 +14,6 @@ db.settings({ timestampInSnapshots: true, merge: true });
 var user = window.localStorage.getItem('emailForSignIn');
 var exitcol = db.collection("Выходы").doc(user);
 
-document.getElementById("ad").disabled = false;
 firebase.auth().onAuthStateChanged(
     function(user) {
         if(user){
