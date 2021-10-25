@@ -7,7 +7,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   console.log(document.referrer);
-  console.log(history.get(-1));
+  console.log($_SERVER['HTTP_REFERER']);
   const mode = getParameterByName('mode');
   const actionCode = getParameterByName('oobCode');
   const continueUrl = getParameterByName('continueUrl');
