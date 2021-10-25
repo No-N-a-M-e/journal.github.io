@@ -5,7 +5,7 @@ function create_accaunt() {
         url: 'https://n0-n4-m3.github.io/journal/verify',
         // This must be true.
         handleCodeInApp: true,
-        // emailVerified: true
+        emailVerified: true
     };
     var emailin = document.getElementById("Emai").value;
     var password = document.getElementById("Passwor").value;
@@ -34,25 +34,25 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-    auth.currentUser.getAuth()
-      .generateEmailVerificationLink(e, a)
-      .then((link) => {
-        return sendCustomVerificationEmail(e, displayName, link);
-      })
-      .catch((error) => {
-        console.log(errorCode);
-        console.log(errorMessage);
-      });
-    // auth.currentUser.sendEmailVerification()
-    //     .then(() => {
-    //         console.log('Ок');
-    //     })
-    //     .catch((error) => {
-    //         var errorCode = error.code;
-    //         var errorMessage = error.message;
-    //         console.log(errorCode);
-    //         console.log(errorMessage);
-    //     });
+    // auth.currentUser.getAuth()
+    //   .generateEmailVerificationLink(e, a)
+    //   .then((link) => {
+    //     return sendCustomVerificationEmail(e, displayName, link);
+    //   })
+    //   .catch((error) => {
+    //     console.log(errorCode);
+    //     console.log(errorMessage);
+    //   });
+    auth.currentUser.sendEmailVerification(a)
+        .then(() => {
+            console.log('Ок');
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+        });
 };
 
 function login() {
