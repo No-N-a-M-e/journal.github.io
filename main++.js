@@ -13,7 +13,7 @@ function adddb() {
         hour: 'numeric', minute: 'numeric', second: 'numeric',
         hour12: false
       };
-    console.log(new Intl.DateTimeFormat('jp-JP', options).format(now));
+    console.log(now.toLocaleDateString("ko-KR"));
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ kuda });
     var count = 0;
