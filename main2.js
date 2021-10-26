@@ -19,7 +19,7 @@ function create_accaunt() {
             db.collection('Выходы').doc(emailin).update({ data_uxoda });
             db.collection('Выходы').doc(emailin).update({ vrema_uxoda });
             db.collection('Ученики').doc(emailin).set({});
-            window.alert('Проверьте электронную почту. Не закрывайте пожалуйста');
+            window.alert('Проверьте электронную почту.');
             var user = userCredential.user;
             verifiy(emailin, actionCodeSettings);
             main(emailin);
@@ -55,12 +55,7 @@ function login() {
             var user = userCredential.user;
             window.localStorage.setItem('emailForSignIn', emailin);
             $('.grid').css('grid-temlate-areas', 'out out')
-            // if (user.email.Verified) {
-            //     console.log('ok');
-                document.location.href = './main.html'
-            // } else {
-            //     window.alert('not verifiy');
-            // }
+            document.location.href = './main.html'
         })
         .catch((error) => {
             var errorCode = error.code;

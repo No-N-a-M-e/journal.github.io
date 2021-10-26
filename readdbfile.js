@@ -21,7 +21,6 @@ firebase.auth().onAuthStateChanged(
             var email = user.email;
             if(emailVerified == true){
                 $('.nadpis').css('visibility', 'hidden');
-                window.alert('verify');
             } else {
                 document.getElementById("ad").setAttribute('onclick', 'return false');
                 auth.currentUser.sendEmailVerification()
