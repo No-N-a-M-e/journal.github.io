@@ -35,6 +35,8 @@ firebase.auth().onAuthStateChanged(
                 }); 
             }
         } else {
+            $("#vinfo").html('Перезайдите в аккаунт');
+            document.getElementById("ad").setAttribute('onclick', 'return false');
             console.log("No user found")
         }
     }
