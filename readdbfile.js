@@ -13,6 +13,7 @@ const auth = firebaseApp.auth();
 db.settings({ timestampInSnapshots: true, merge: true });
 var user = window.localStorage.getItem('emailForSignIn');
 var exitcol = db.collection("Выходы").doc(user);
+$('.nadpis').css('visibility', 'hidden');
 
 firebase.auth().onAuthStateChanged(
     function(user) {
@@ -20,8 +21,8 @@ firebase.auth().onAuthStateChanged(
             var emailVerified = user.emailVerified;
             var email = user.email;
             if(emailVerified == true){
-                $('.nadpis').css('visibility', 'hidden');
             } else {
+                $('.nadpis').css('visibility', 'visible');
                 document.getElementById("ad").setAttribute('onclick', 'return false');
                 auth.currentUser.sendEmailVerification()
                     .then(() => {
@@ -36,6 +37,7 @@ firebase.auth().onAuthStateChanged(
             }
         } else {
             $("#vinfo").html('Перезайдите в аккаунт');
+            $('.nadpis').css('visibility', 'visible');
             document.getElementById("ad").setAttribute('onclick', 'return false');
             document.getElementById("vinfo").setAttribute('href', './index');
             console.log("No user found")
