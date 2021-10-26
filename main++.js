@@ -6,7 +6,9 @@ function adddb() {
     var vrema_prixoda = document.getElementById("time_end").value;
     var veryfied = false;
     var now = new Date();
+    console.log(now);
     var data_uxoda = String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    console.log(data_uxoda);
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ kuda });
     var count = 0;
