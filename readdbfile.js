@@ -13,6 +13,37 @@ const auth = firebaseApp.auth();
 db.settings({ timestampInSnapshots: true, merge: true });
 var user = window.localStorage.getItem('emailForSignIn');
 var exitcol = db.collection("Выходы").doc(user);
+$('.nadpis').css('visibility', 'hidden');
+
+firebase.auth().onAuthStateChanged(
+    function(user) {
+        if(user){
+            var emailVerified = user.emailVerified;
+            var email = user.email;
+            if(emailVerified == true){
+            } else {
+                $('.nadpis').css('visibility', 'visible');
+                document.getElementById("ad").setAttribute('onclick', 'return false');
+                auth.currentUser.sendEmailVerification()
+                    .then(() => {
+                        console.log('Ок');
+                    })
+                    .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log(errorCode);
+                        console.log(errorMessage);
+                }); 
+            }
+        } else {
+            $("#vinfo").html('Перезайдите в аккаунт');
+            $('.nadpis').css('visibility', 'visible');
+            document.getElementById("ad").setAttribute('onclick', 'return false');
+            document.getElementById("vinfo").setAttribute('href', './index');
+            console.log("No user found")
+        }
+    }
+);
 
 exitcol.onSnapshot((doc) => {
     $("#tt").html(doc.data().vrema_uxoda);

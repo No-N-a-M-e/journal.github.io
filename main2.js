@@ -19,7 +19,7 @@ function create_accaunt() {
             db.collection('Выходы').doc(emailin).update({ data_uxoda });
             db.collection('Выходы').doc(emailin).update({ vrema_uxoda });
             db.collection('Ученики').doc(emailin).set({});
-            window.alert('Проверьте электронную почту');
+            window.alert('Проверьте электронную почту.');
             var user = userCredential.user;
             verifiy(emailin, actionCodeSettings);
             main(emailin);
@@ -34,16 +34,16 @@ function create_accaunt() {
 };
 
 function verifiy(e, a) {
-    firebase.auth().sendSignInLinkToEmail(e, a)
+    auth.currentUser.sendEmailVerification()
         .then(() => {
-
+            console.log('Ок');
         })
         .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode);
             console.log(errorMessage);
-        });
+        }); 
 };
 
 function login() {
@@ -54,14 +54,8 @@ function login() {
         .then((userCredential) => {
             var user = userCredential.user;
             window.localStorage.setItem('emailForSignIn', emailin);
-            document.location.href = './main.html'
-            window.localStorage.setItem('emailForSignIn', emailin);
             $('.grid').css('grid-temlate-areas', 'out out')
-            if (user.email.Verified) {
-                console.log('ok');
-            } else {
-                window.alert('verifiy suka');
-            }
+            document.location.href = './main.html'
         })
         .catch((error) => {
             var errorCode = error.code;
