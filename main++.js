@@ -4,7 +4,6 @@ function adddb() {
     var vrema_uxoda = document.getElementById("time").value;
     var data_prixoda = document.getElementById("end").value;
     var vrema_prixoda = document.getElementById("time_end").value;
-    var veryfied = false;
     var now = new Date();
     var data_uxoda = String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
     console.log(now);
