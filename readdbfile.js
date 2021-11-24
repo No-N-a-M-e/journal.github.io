@@ -49,4 +49,4 @@ db.collection("Выходы").doc(user).onSnapshot((doc) => {
         $("#dt").html(doc.data().data_uxoda);
     }
 });
-document.getElementById('button1').onclick = function() { db.collection('Выходы').doc(user).update({ veryfied: true }); }
+document.getElementById('check').onclick = function() { db.collection('Выходы').doc(user).update({ veryfied: true }); }
