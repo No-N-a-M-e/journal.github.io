@@ -1,5 +1,5 @@
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyCuU3_U0yblB7IHdY8CTJb3nY5SSdIlmK8",
+    apiKey: "AIzaSyBIt004MBqkeI4b7pz24oYpurHiyUaNil8",
     authDomain: "basr-d0079.firebaseapp.com",
     databaseURL: "https://basr-d0079-default-rtdb.firebaseio.com",
     projectId: "basr-d0079",
