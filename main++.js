@@ -9,7 +9,7 @@ function adddb() {
     console.log(now);
     console.log(vrema_uxoda);
     console.log(now.getHours() + ':' + now.getMinutes());
-    console.log(now.getHours() + ':' + now.getMinutes() > vrema_uxoda);
+    console.log(now.getHours() + ':' + now.getMinutes() < vrema_uxoda);
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ kuda });
     if (vrema_uxoda < now.getHours() + ':' + now.getMinutes()) {
