@@ -61,4 +61,4 @@ async function getValue() {
         $("#dt").html(doc.data().data_uxoda);
     }
 }
-await getValue();
+getValue();
