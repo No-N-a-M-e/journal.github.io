@@ -14,7 +14,7 @@ function adddb() {
     db.collection('Выходы').doc(user).update({ kuda });
     if (vrema_uxoda < now.getHours() + ':' + now.getMinutes()) {
         db.collection('Выходы').doc(user).update({ vrema_uxoda });
-        if (data_prixoda < data_uxoda) {
+        if (data_prixoda >= data_uxoda) {
             db.collection('Выходы').doc(user).update({ data_prixoda });
             if ((vrema_prixoda > vrema_uxoda && data_uxoda == data_prixoda) || (vrema_prixoda < vrema_uxoda && data_prixoda > data_uxoda)) {
                 db.collection('Выходы').doc(user).update({ vrema_prixoda });
