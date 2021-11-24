@@ -7,17 +7,7 @@ function adddb() {
     var veryfied = false;
     var now = new Date();
     var data_uxoda = String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-    var options = {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        hour12: false
-    };
     console.log(data_uxoda);
-    console.log(now.toLocaleDateString("ko-KR"));
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ kuda });
     var count = 0;
