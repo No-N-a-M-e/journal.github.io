@@ -32,5 +32,7 @@ function adddb() {
 }
 
 function ccheck() {
-
+    if (db.collection('Выходы').doc(user).get(data_prixoda) != null) {
+        db.collection('Выходы').doc(user).update(veryfied) = true;
+    }
 }

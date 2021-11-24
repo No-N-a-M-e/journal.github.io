@@ -17,11 +17,10 @@ $('.nadpis').css('visibility', 'hidden');
 
 firebase.auth().onAuthStateChanged(
     function(user) {
-        if(user){
+        if (user) {
             var emailVerified = user.emailVerified;
             var email = user.email;
-            if(emailVerified == true){
-            } else {
+            if (emailVerified == true) {} else {
                 $('.nadpis').css('visibility', 'visible');
                 document.getElementById("ad").setAttribute('onclick', 'return false');
                 auth.currentUser.sendEmailVerification()
@@ -33,7 +32,7 @@ firebase.auth().onAuthStateChanged(
                         var errorMessage = error.message;
                         console.log(errorCode);
                         console.log(errorMessage);
-                }); 
+                    });
             }
         } else {
             $("#vinfo").html('Перезайдите в аккаунт');
@@ -46,8 +45,10 @@ firebase.auth().onAuthStateChanged(
 );
 
 exitcol.onSnapshot((doc) => {
-    $("#tt").html(doc.data().vrema_uxoda);
-    $("#dt").html(doc.data().data_uxoda);
+    if (db.collection('Выходы').doc(user).get(veryfied) == false) {
+        $("#tt").html(doc.data().vrema_uxoda);
+        $("#dt").html(doc.data().data_uxoda);
+    }
 })
 document.getElementById('check').addEventListener('click', function() {
     db.collection('Выходы').doc(user).update({ veryfied: true });

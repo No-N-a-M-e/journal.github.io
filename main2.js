@@ -14,6 +14,7 @@ function create_accaunt() {
             db.collection('Выходы').doc(emailin).set({});
             db.collection('Выходы').doc(emailin).update({ data_uxoda });
             db.collection('Выходы').doc(emailin).update({ vrema_uxoda });
+            db.collection('Выходы').doc(emailin).update({});
             db.collection('Ученики').doc(emailin).set({});
             window.alert('Проверьте электронную почту.');
             var user = userCredential.user;
