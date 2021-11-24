@@ -17,7 +17,7 @@ function adddb() {
             if (((vrema_prixoda > vrema_uxoda) && (data_uxoda == data_prixoda)) || (data_prixoda > data_uxoda)) {
                 db.collection('Выходы').doc(user).update({ vrema_prixoda });
             } else {
-                window.alert('введите правильное время');
+                window.alert('введите правильное время!!!');
             }
         } else {
             window.alert('Введите правильную дату');
