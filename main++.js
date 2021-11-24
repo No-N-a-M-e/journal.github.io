@@ -17,7 +17,7 @@ function adddb() {
         time = now.getHours() + ":";
     }
     if (now.getMinutes() <= 9) {
-        time = time + "+" + now.getMinutes();
+        time = time + now.getMinutes();
     }
     console.log(time);
     if (vrema_uxoda >= now.getHours() + ':' + now.getMinutes()) {
