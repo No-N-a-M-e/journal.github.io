@@ -43,7 +43,7 @@ firebase.auth().onAuthStateChanged(
         }
     }
 );
-console.log(db.collection('Выходы').doc(user).get({ veryfied }));
+console.log(db.collection('Выходы').doc(user).get({ "veryfied" }));
 exitcol.onSnapshot((doc) => {
     if (db.collection('Выходы').doc(user).get("veryfied") == false) {
         $("#tt").html(doc.data().vrema_uxoda);
