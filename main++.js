@@ -17,13 +17,13 @@ function adddb() {
             if (((vrema_prixoda > vrema_uxoda) && (data_uxoda == data_prixoda)) || (data_prixoda > data_uxoda)) {
                 db.collection('Выходы').doc(user).update({ vrema_prixoda });
             } else {
-                window.alert('введите правильное время!!!');
+                window.alert('Введите правильное время прихода');
             }
         } else {
             window.alert('Введите правильную дату');
         }
     } else {
-        window.alert('Введите правильное время');
+        window.alert('Введите правильное время ухода');
     }
     db.collection('Выходы').doc(user).update({ veryfied: false });
 }
