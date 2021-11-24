@@ -44,9 +44,6 @@ firebase.auth().onAuthStateChanged(
     }
 );
 exitcol.onSnapshot((doc) => {
-        $("#tt").html(doc.data().vrema_uxoda);
-        $("#dt").html(doc.data().data_uxoda);
-    })
-    // document.getElementById('check').onclick = function(){
-
-// };
+    $("#tt").html(doc.data().vrema_uxoda);
+    $("#dt").html(doc.data().data_uxoda);
+})
