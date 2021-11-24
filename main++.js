@@ -8,7 +8,6 @@ function adddb() {
     var vrema_prixoda = document.getElementById("time_end").value;
     var now = new Date();
     var data_uxoda = String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-    db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ kuda });
     if (now.getHours() <= 9) {
         time = "0" + now.getHours() + ":";
@@ -39,6 +38,7 @@ function adddb() {
         db.collection('Выходы').doc(user).update({ vrema_uxoda });
         db.collection('Выходы').doc(user).update({ data_prixoda });
         db.collection('Выходы').doc(user).update({ vrema_prixoda });
+        db.collection('Выходы').doc(user).update({ data_uxoda });
     }
     db.collection('Выходы').doc(user).update({ veryfied: false });
 }
