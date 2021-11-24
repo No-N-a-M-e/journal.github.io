@@ -1,5 +1,5 @@
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyDVGjMOoCNjGJlqv-ggfqvsu8H6QdHUR38 ",
+    apiKey: "AIzaSyDVGjMOoCNjGJlqv-ggfqvsu8H6QdHUR38",
     authDomain: "basr-d0079.firebaseapp.com",
     databaseURL: "https://basr-d0079-default-rtdb.firebaseio.com",
     projectId: "basr-d0079",
@@ -38,7 +38,7 @@ firebase.auth().onAuthStateChanged(
             $("#vinfo").html('Перезайдите в аккаунт');
             $('.nadpis').css('visibility', 'visible');
             document.getElementById("ad").setAttribute('onclick', 'return false');
-            document.getElementById("vinfo").setAttribute('href', './');
+            document.getElementById("vinfo").setAttribute('href', './index');
             console.log("No user found")
         }
     }
