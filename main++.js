@@ -9,10 +9,14 @@ function adddb() {
     console.log(now);
     var data_uxoda = String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
     var options = {
-        year: 'numeric', month: 'numeric', day: 'numeric',
-        hour: 'numeric', minute: 'numeric', second: 'numeric',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
         hour12: false
-      };
+    };
     console.log(now.toLocaleDateString("ko-KR"));
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ kuda });
@@ -35,4 +39,8 @@ function adddb() {
         window.alert('введите правильное время');
     }
     db.collection('Выходы').doc(user).update({ veryfied });
+}
+
+function ccheck() {
+
 }
