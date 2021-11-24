@@ -27,7 +27,7 @@ function adddb() {
     } else {
         window.alert('Введите правильное время');
     }
-    db.collection('Выходы').doc(user).update({ veryfied });
+    db.collection('Выходы').doc(user).update({ veryfied: false });
 }
 
 function ccheck() {
