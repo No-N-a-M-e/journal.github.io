@@ -6,13 +6,12 @@ function adddb() {
     var vrema_prixoda = document.getElementById("time_end").value;
     var now = new Date();
     var data_uxoda = String(now.getYear() + 1900) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-    console.log(now);
     console.log(vrema_uxoda);
     console.log(now.getHours() + ':' + now.getMinutes());
     console.log(now.getHours() + ':' + now.getMinutes() < vrema_uxoda);
     db.collection('Выходы').doc(user).update({ data_uxoda });
     db.collection('Выходы').doc(user).update({ kuda });
-    if (vrema_uxoda < now.getHours() + ':' + now.getMinutes()) {
+    if (vrema_uxoda >= now.getHours() + ':' + now.getMinutes()) {
         db.collection('Выходы').doc(user).update({ vrema_uxoda });
         if (data_prixoda >= data_uxoda) {
             db.collection('Выходы').doc(user).update({ data_prixoda });
