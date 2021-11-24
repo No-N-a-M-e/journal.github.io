@@ -45,14 +45,14 @@ firebase.auth().onAuthStateChanged(
 );
 //$("#tt").html(db.collection('Выходы').doc(user).get("vrema_uxoda"));
 //$("#dt").html(db.collection('Выходы').doc(user).get("data_uxoda"));
-console.log(db.collection('Выходы').doc(user).get("veryfied"));
-exitcol.onSnapshot((doc) => {
-    //if (db.collection('Выходы').doc(user).get("veryfied") == false) {
-    console.log('ok');
-    $("#tt").html(doc.data().vrema_uxoda);
-    $("#dt").html(doc.data().data_uxoda);
-    //}
-})
+// console.log(db.collection('Выходы').doc(user).get("veryfied"));
+// exitcol.onSnapshot((doc) => {
+//     //if (db.collection('Выходы').doc(user).get("veryfied") == false) {
+//     console.log('ok');
+//     $("#tt").html(doc.data().vrema_uxoda);
+//     $("#dt").html(doc.data().data_uxoda);
+//     //}
+// })
 async function getValue() {
     doc = await db.collection('Выходы').doc(user).get("veryfied");
     if (doc == false) {
