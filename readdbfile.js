@@ -50,6 +50,7 @@ exitcol.onSnapshot((doc) => {
     }
 });
 db.collection("Выходы").doc(user).onSnapshot((doc) => {
+    console.log(doc.data().veryfied);
     if (doc.data().veryfied == false) {
         $("#tt").html(doc.data().vrema_uxoda);
         $("#dt").html(doc.data().data_uxoda);
