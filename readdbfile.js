@@ -50,6 +50,3 @@ exitcol.onSnapshot((doc) => {
         $("#dt").html(doc.data().data_uxoda);
     }
 })
-document.getElementById('check').addEventListener('click', function() {
-    db.collection('Выходы').doc(user).update({ veryfied: true });
-})
