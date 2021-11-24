@@ -53,3 +53,12 @@ exitcol.onSnapshot((doc) => {
     $("#dt").html(doc.data().data_uxoda);
     //}
 })
+async function getValue() {
+    doc = await db.collection('Выходы').doc(user).get("veryfied");
+    if (doc == false) {
+        console.log('ok');
+        $("#tt").html(doc.data().vrema_uxoda);
+        $("#dt").html(doc.data().data_uxoda);
+    }
+}
+await getValue();
