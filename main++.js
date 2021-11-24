@@ -20,17 +20,17 @@ function adddb() {
         time = time + now.getMinutes();
     }
     if (vrema_uxoda >= time) {
-        db.collection('Выходы').doc(user).update({ vrema_uxoda });
         if (data_prixoda >= data_uxoda) {
-            db.collection('Выходы').doc(user).update({ data_prixoda });
             if (((vrema_prixoda > vrema_uxoda) && (data_uxoda == data_prixoda)) || (data_prixoda > data_uxoda)) {
                 db.collection('Выходы').doc(user).update({ vrema_prixoda });
             } else {
                 window.alert('Введите правильное время прихода');
             }
+            db.collection('Выходы').doc(user).update({ data_prixoda });
         } else {
             window.alert('Введите правильную дату');
         }
+        db.collection('Выходы').doc(user).update({ vrema_uxoda });
     } else {
         window.alert('Введите правильное время ухода');
     }
