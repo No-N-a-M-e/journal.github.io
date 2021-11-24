@@ -37,6 +37,6 @@ function adddb() {
     db.collection('Выходы').doc(user).update({ veryfied: false });
 }
 
-function ccheck() {
-    db.collection('Выходы').doc(user).update({ veryfied: true });
-}
+// function ccheck() {
+//     db.collection('Выходы').doc(user).update({ veryfied: true });
+// }
