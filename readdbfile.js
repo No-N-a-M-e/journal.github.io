@@ -43,14 +43,7 @@ firebase.auth().onAuthStateChanged(
         }
     }
 );
-exitcol.onSnapshot((doc) => {
-    if (db.collection('Выходы').doc(user).get("veryfied") == false) {
-        $("#tt").html(doc.data().vrema_uxoda);
-        $("#dt").html(doc.data().data_uxoda);
-    }
-});
 db.collection("Выходы").doc(user).onSnapshot((doc) => {
-    console.log(doc.data().veryfied);
     if (doc.data().veryfied == false) {
         $("#tt").html(doc.data().vrema_uxoda);
         $("#dt").html(doc.data().data_uxoda);
