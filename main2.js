@@ -10,7 +10,7 @@ function create_accaunt() {
     // if (emailin != "st.@student.spbu.ru") {
     //     window.alert('низя');
     // }
-    let st = "st" + /./ + "@student.spbu.ru";
+    let st = "st" + /\d/ + "@student.spbu.ru";
     console.log(st == "st084435@student.spbu.ru");
     firebase.auth().createUserWithEmailAndPassword(emailin, password)
         .then((userCredential) => {
