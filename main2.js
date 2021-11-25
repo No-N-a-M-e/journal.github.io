@@ -59,18 +59,16 @@ function login() {
             for (let i = 0; i < vos.length; i++) {
                 if (emailin == vos[i]) {
                     count++;
-                    console.log('ok');
                 }
             }
             if (count == 1) {
                 window.localStorage.setItem('emailForSignIn', emailin);
                 $('.grid').css('grid-temlate-areas', 'out out');
-                //document.location.href = './main.html';
-                console.log('OK');
+                document.location.href = './analytics.html';
             } else {
                 window.localStorage.setItem('emailForSignIn', emailin);
                 $('.grid').css('grid-temlate-areas', 'out out');
-                //document.location.href = './analytics.html';
+                //document.location.href = './main.html';
             }
         })
         .catch((error) => {
