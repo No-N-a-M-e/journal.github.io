@@ -49,16 +49,27 @@ function verifiy(e, a) {
 
 function login() {
     let vos = new Array();
+    var count = 0;
     vos = ['timamen10@gmail.com'];
     var emailin = document.getElementById("Email").value;
     var password = document.getElementById("Password").value;
     firebase.auth().signInWithEmailAndPassword(emailin, password)
         .then((userCredential) => {
             var user = userCredential.user;
-            if ()
+            for (let i = 0; i < vos.length; i++) {
+                if (emailin == vos[i]) {
+                    count++;
+                }
+            }
+            if (count == 1) {
                 window.localStorage.setItem('emailForSignIn', emailin);
-            $('.grid').css('grid-temlate-areas', 'out out')
-            document.location.href = './main.html'
+                $('.grid').css('grid-temlate-areas', 'out out');
+                document.location.href = './main.html';
+            } else {
+                window.localStorage.setItem('emailForSignIn', emailin);
+                $('.grid').css('grid-temlate-areas', 'out out');
+                document.location.href = './analytics.html';
+            }
         })
         .catch((error) => {
             var errorCode = error.code;
