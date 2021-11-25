@@ -8,7 +8,7 @@ function create_accaunt() {
     var password = document.getElementById("Passwor").value;
     var errorCode = ' ';
     if (emailin != "st.@student.spbu.ru") {
-        window.allert('низя');
+        window.alert('низя');
     }
     firebase.auth().createUserWithEmailAndPassword(emailin, password)
         .then((userCredential) => {
