@@ -65,11 +65,12 @@ function login() {
             if (count == 1) {
                 window.localStorage.setItem('emailForSignIn', emailin);
                 $('.grid').css('grid-temlate-areas', 'out out');
-                document.location.href = './main.html';
+                //document.location.href = './main.html';
+                console.log('OK');
             } else {
                 window.localStorage.setItem('emailForSignIn', emailin);
                 $('.grid').css('grid-temlate-areas', 'out out');
-                document.location.href = './analytics.html';
+                //document.location.href = './analytics.html';
             }
         })
         .catch((error) => {
