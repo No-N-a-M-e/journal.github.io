@@ -11,7 +11,7 @@ function create_accaunt() {
     //     window.alert('низя');
     // }
     let st = "st" + /./ + "@student.spbu.ru";
-    console.log(st);
+    console.log(st == "st084435@student.spbu.ru");
     firebase.auth().createUserWithEmailAndPassword(emailin, password)
         .then((userCredential) => {
             var data_uxoda = "-";
