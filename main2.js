@@ -30,7 +30,7 @@ function create_accaunt() {
                 if (errorCode == 'auth/email-already-in-use') window.alert('Введите другую почту');
             });
     } else {
-        window.alert("Введите вашк st почту");
+        window.alert("Введите вашу st почту");
     }
 };
 
