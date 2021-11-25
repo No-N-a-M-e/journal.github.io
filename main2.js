@@ -50,7 +50,7 @@ function verifiy(e, a) {
 function login() {
     let vos = new Array();
     var count = 0;
-    vos = ['timamen10@gmail.com'];
+    vos = ['st084435@student.spbu.ru'];
     var emailin = document.getElementById("Email").value;
     var password = document.getElementById("Password").value;
     firebase.auth().signInWithEmailAndPassword(emailin, password)
