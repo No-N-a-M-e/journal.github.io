@@ -7,6 +7,9 @@ function create_accaunt() {
     var emailin = document.getElementById("Emai").value;
     var password = document.getElementById("Passwor").value;
     var errorCode = ' ';
+    if (emailin != "st.@student.spbu.ru") {
+        allert('низя');
+    }
     firebase.auth().createUserWithEmailAndPassword(emailin, password)
         .then((userCredential) => {
             var data_uxoda = "-";
