@@ -59,6 +59,7 @@ function login() {
             for (let i = 0; i < vos.length; i++) {
                 if (emailin == vos[i]) {
                     count++;
+                    console.log('ok');
                 }
             }
             if (count == 1) {
