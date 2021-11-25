@@ -7,31 +7,31 @@ function create_accaunt() {
     let emailin = document.getElementById("Emai").value;
     var password = document.getElementById("Passwor").value;
     var errorCode = ' ';
-    if (emailin.indexOf('st') == 0) {
-        firebase.auth().createUserWithEmailAndPassword(emailin, password)
-            .then((userCredential) => {
-                var data_uxoda = "-";
-                var vrema_uxoda = "-";
-                db.collection('Выходы').doc(emailin).set({});
-                db.collection('Выходы').doc(emailin).update({ data_uxoda });
-                db.collection('Выходы').doc(emailin).update({ vrema_uxoda });
-                db.collection('Выходы').doc(emailin).update({});
-                db.collection('Ученики').doc(emailin).set({});
-                window.alert('Проверьте электронную почту.');
-                var user = userCredential.user;
-                verifiy(emailin, actionCodeSettings);
-                main(emailin);
-            })
-            .catch((error) => {
-                errorCode = error.code;
-                var errorMessage = error.message;
-                console.log(errorCode);
-                console.log(errorMessage);
-                if (errorCode == 'auth/email-already-in-use') window.alert('Введите другую почту');
-            });
-    } else {
-        window.alert("Введите вашу st почту");
-    }
+    //if (emailin.indexOf('st') == 0) {
+    firebase.auth().createUserWithEmailAndPassword(emailin, password)
+        .then((userCredential) => {
+            var data_uxoda = "-";
+            var vrema_uxoda = "-";
+            db.collection('Выходы').doc(emailin).set({});
+            db.collection('Выходы').doc(emailin).update({ data_uxoda });
+            db.collection('Выходы').doc(emailin).update({ vrema_uxoda });
+            db.collection('Выходы').doc(emailin).update({});
+            db.collection('Ученики').doc(emailin).set({});
+            window.alert('Проверьте электронную почту.');
+            var user = userCredential.user;
+            verifiy(emailin, actionCodeSettings);
+            main(emailin);
+        })
+        .catch((error) => {
+            errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+            if (errorCode == 'auth/email-already-in-use') window.alert('Введите другую почту');
+        });
+    // } else {
+    //     window.alert("Введите вашу st почту");
+    // }
 };
 
 function verifiy(e, a) {
@@ -68,7 +68,7 @@ function login() {
             } else {
                 window.localStorage.setItem('emailForSignIn', emailin);
                 $('.grid').css('grid-temlate-areas', 'out out');
-                //document.location.href = './main.html';
+                document.location.href = './main.html';
             }
         })
         .catch((error) => {
