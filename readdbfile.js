@@ -47,9 +47,11 @@ db.collection("Выходы").doc(user).onSnapshot((doc) => {
     if (doc.data().veryfied == false) {
         $("#tt").html(doc.data().vrema_uxoda);
         $("#dt").html(doc.data().data_uxoda);
+        $("#wt").html(doc.data().kuda);
     } else {
         $("#tt").html("-");
         $("#dt").html("-");
+        $("#wt").html("-");
     }
 });
 document.getElementById('check').onclick = function() { db.collection('Выходы').doc(user).update({ veryfied: true }); }
