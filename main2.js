@@ -48,13 +48,15 @@ function verifiy(e, a) {
 };
 
 function login() {
-
+    let vos = new Array();
+    vos = ['timamen10@gmail.com'];
     var emailin = document.getElementById("Email").value;
     var password = document.getElementById("Password").value;
     firebase.auth().signInWithEmailAndPassword(emailin, password)
         .then((userCredential) => {
             var user = userCredential.user;
-            window.localStorage.setItem('emailForSignIn', emailin);
+            if ()
+                window.localStorage.setItem('emailForSignIn', emailin);
             $('.grid').css('grid-temlate-areas', 'out out')
             document.location.href = './main.html'
         })
