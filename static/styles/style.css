@@ -1,0 +1,215 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.button {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  background: #E95420;
+  padding: 10px 15px;
+  border-radius: 7px;
+}
+
+.header, .content, .secondary_content {
+  padding: 20px 315px;
+}
+
+.header {
+  background: #E95420;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 24px;
+}
+
+.content {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 45px;
+}
+
+.enter {
+  padding: 50px 100px;
+  background: #EAEAEA;
+  border-radius: 5px;
+  border: 2px solid #D0D0D0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section_title {
+  font-size: 24px;
+  color: #E95420;
+}
+
+.data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 35px 0 35px 0;
+  gap: 30px;
+}
+
+.data input {
+  width: 100%;
+  padding: 21px 15px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.data input::-webkit-input-placeholder {
+  font-weight: bold;
+  font-size: 16px;
+  color: #8A8A8A;
+}
+
+.data input:-ms-input-placeholder {
+  font-weight: bold;
+  font-size: 16px;
+  color: #8A8A8A;
+}
+
+.data input::-ms-input-placeholder {
+  font-weight: bold;
+  font-size: 16px;
+  color: #8A8A8A;
+}
+
+.data input::placeholder {
+  font-weight: bold;
+  font-size: 16px;
+  color: #8A8A8A;
+}
+
+.out {
+  padding: 50px 35px;
+  background: #EAEAEA;
+  border-radius: 5px;
+  border: 2px solid #D0D0D0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30 px;
+}
+
+.out_data {
+  padding: 35px 0px;
+}
+
+.reason, .data_in, .data_out {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+}
+
+.reason input, .reason select, .data_in input, .data_in select, .data_out input, .data_out select {
+  color: black;
+  padding: 5px 20px;
+}
+
+.reason input::-webkit-input-placeholder, .reason select::-webkit-input-placeholder, .data_in input::-webkit-input-placeholder, .data_in select::-webkit-input-placeholder, .data_out input::-webkit-input-placeholder, .data_out select::-webkit-input-placeholder {
+  font-size: 20px;
+  color: black;
+}
+
+.reason input:-ms-input-placeholder, .reason select:-ms-input-placeholder, .data_in input:-ms-input-placeholder, .data_in select:-ms-input-placeholder, .data_out input:-ms-input-placeholder, .data_out select:-ms-input-placeholder {
+  font-size: 20px;
+  color: black;
+}
+
+.reason input::-ms-input-placeholder, .reason select::-ms-input-placeholder, .data_in input::-ms-input-placeholder, .data_in select::-ms-input-placeholder, .data_out input::-ms-input-placeholder, .data_out select::-ms-input-placeholder {
+  font-size: 20px;
+  color: black;
+}
+
+.reason input::placeholder, .reason select::placeholder, .data_in input::placeholder, .data_in select::placeholder, .data_out input::placeholder, .data_out select::placeholder {
+  font-size: 20px;
+  color: black;
+}
+
+.last_out {
+  background: #EAEAEA;
+  border-radius: 5px;
+  border: 2px solid #D0D0D0;
+  padding: 20px 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.last_out_text {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1700px) {
+  .out, .enter {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

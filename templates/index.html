@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронаая роспись</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'styles/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="header">
+        <p class="title">Электроная роспись</p>
+        <img src="{{ url_for('static', filename= 'img/Logo.svg') }}" alt="logo" class="logo">
+        <form action="" method="post">
+            <button type="submit" class="title" style="background: none;">Выход</button>
+            <input name="logout" value="logout" style="display: none;">
+        </form>
+    </header>
+    <section class="content">
+        <form action="" class="enter" method="post" style="display: {{display_login}};">
+            <p class="section_title">Вход</p>
+            <p>{{error}}</p>
+            <div class="data">
+                <input placeholder="Почта. Например: st000000@student.spbu.ru" type="text" name="login" class="login">
+                <input placeholder="Пароль. Например: 00000000" type="password" name="password" class="password">
+            </div>
+            <button type="submit" class="button">Войти</button>
+        </form>
+        <form action="" class="enter" method="post" style="display: {{display_reg}};">
+            <p class="section_title">Регистрация</p>
+            <p>{{error}}</p>
+            <div class="data">
+                <input placeholder="Имя" type="text" name="name" class="login">
+                <input placeholder="Фамилия" type="text" name="secname" class="login">
+                <input placeholder="Номер комнаты" type="text" name="room" class="login">
+                <input placeholder="Почта. Например: st000000@student.spbu.ru" type="text" name="logi" class="login">
+                <input placeholder="Пароль. Например: 00000000" type="password" name="passwor" class="password">
+            </div>
+            <button type="submit" class="button">Зрегистрироваться</button>
+        </form>
+        <form action="" method="post" style="display: {{display_login}};">
+            <button type="submit" style="background: none;">Нет аккаунта?</button>
+            <input name="reg_point" value="none" style="display: none;">
+        </form>
+        <form action="" method="post" style="display: {{display_reg}};">
+            <button type="submit" style="background: none;">Уже есть аккаунт?</button>
+            <input name="login_point" value="none" style="display: none;">
+        </form>
+        <form action="" class="out" method="post" style="display: {{ display_out }};">
+            <p class="section_title">Выход из общежиия</p>
+            <div class="out_data">
+                <div class="reason">
+                    <p class="input_title">Причина</p>
+                    <select name="reason" id="">
+                        <option value="">Гулять</option>
+                        <option value="">Магазин</option>
+                        <option value="">На официальное мероприятие</option>
+                        <option value="">К родителям (законному представителю)</option>
+                    </select>
+                </div>
+                <div class="data_out">
+                    <p class="input_title">Дата и время выхода</p>
+                    <input name="outdoor_datetime" type="datetime-local">
+                </div>
+                <div class="data_in">
+                    <p class="input_title">Дата и время прихода</p>
+                    <input name="indoor_datetime" type="datetime-local">
+                </div>
+            </div>
+            <button type="submit" class="button">Готово</button>
+        </form>
+    </section>
+    <section class="secondary_content" style="display: {{display_out}};">
+        <form action="/" class="last_out" method="post">
+            <p class="last_out_text">Последний выход {{where}} {{outdoor_datetime}}</p>
+            <button type="submit" style="background: {{color}}" class="button" {{disabled}}>{{marked}}</button>
+            <input name="form" value="mark" style="display: none;">
+        </form>
+    </section>
+    <section class="footer">
+        <p class="we"></p>
+    </section>
+</body>
+
+</html>
